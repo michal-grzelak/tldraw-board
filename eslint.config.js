@@ -10,7 +10,7 @@ import globals from 'globals'
 
 export default tseslint.config(
   {
-    ignores: ['build', 'eslint.config.js'],
+    ignores: ['build', 'eslint.config.js', '.react-router'],
   },
 
   {

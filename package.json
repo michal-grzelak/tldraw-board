@@ -1,12 +1,12 @@
 {
-  "name": "",
+  "name": "tldraw",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/simonsmith/react-router-fastify"
+    "url": "https://github.com/ardentcode/tldraw"
   },
   "license": "MIT",
-  "author": "Simon Smith <simonsmith@users.noreply.github.com>",
+  "author": "Michał Grzelak",
   "type": "module",
   "scripts": {
     "build": "NODE_ENV=production run-s 'build:react' 'build:server' 'build:ext'",
@@ -14,14 +14,15 @@
     "build:react": "react-router build",
     "build:server": "tsc --project tsconfig.server.json",
     "check": "run-p 'check:*'",
-    "check:eslint": "echo 'Checking eslint...' && eslint --ext .js,.ts,.tsx .",
+    "check:eslint": "eslint .",
     "check:format": "prettier --check .",
-    "check:type": "echo 'Checking typescript...' && run-s typegen 'build:server --noEmit' 'tsc --noEmit'",
+    "check:type": "run-s typegen 'build:server --noEmit' 'tsc --noEmit'",
     "dev": "tsx watch ./server/start",
     "format": "prettier --write .",
     "start": "NODE_ENV=production node --env-file-if-exists=.env --env-file-if-exists=.env.production ./build/fastify/start.js",
     "tsc": "tsc",
-    "typegen": "react-router typegen"
+    "typegen": "react-router typegen",
+    "prepare": "husky"
   },
   "dependencies": {
     "@mcansh/remix-fastify": "^4.0.6",
@@ -50,6 +51,8 @@
     "eslint": "^9.21.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react-hooks": "canary",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "npm-run-all2": "^7.0.2",
     "pino-pretty": "^13.0.0",
     "prettier": "^3.5.2",
@@ -64,9 +67,6 @@
     "vitest": "^3.0.6"
   },
   "engines": {
-    "node": ">=20.0.0"
-  },
-  "volta": {
-    "node": "22.13.0"
+    "node": ">=22"
   }
 }
