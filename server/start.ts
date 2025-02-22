@@ -1,10 +1,10 @@
-import {fastify} from 'fastify'
-import {reactRouterFastify} from '@mcansh/remix-fastify/react-router'
-import getPort, {portNumbers} from 'get-port'
-import {usersRouter} from './users'
-import type {LoggerOptions} from 'pino'
+import { fastify } from 'fastify'
+import { reactRouterFastify } from '@mcansh/remix-fastify/react-router'
+import getPort, { portNumbers } from 'get-port'
+import { usersRouter } from './users'
+import type { LoggerOptions } from 'pino'
 
-const {NODE_ENV = 'development'} = process.env
+const { NODE_ENV = 'development' } = process.env
 const logLevel = process.env.LOG_LEVEL || 'warn'
 const loggerOptions: Record<'development' | 'production', LoggerOptions> = {
   development: {
@@ -27,7 +27,7 @@ const app = fastify({
 })
 
 app.register(reactRouterFastify)
-app.register(usersRouter, {prefix: '/api'})
+app.register(usersRouter, { prefix: '/api' })
 
 const desiredPort = Number(process.env.PORT) || 3000
 const host = process.env.HOST || 'localhost'

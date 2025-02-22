@@ -34,6 +34,6 @@
     },
     "noEmit": true,
     "rootDirs": [".", "./.react-router/types"],
-    "plugins": [{"name": "@react-router/dev"}]
+    "plugins": [{ "name": "@react-router/dev" }]
   }
 }

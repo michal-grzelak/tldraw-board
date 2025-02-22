@@ -1,7 +1,7 @@
-import {useUsersQuery} from '@routes/index.queries'
+import { useUsersQuery } from '@routes/index.queries'
 
 export const Home = () => {
-  const {data, isPending, isError} = useUsersQuery()
+  const { data, isPending, isError } = useUsersQuery()
   if (isPending) {
     return <p>loading users</p>
   }
@@ -9,7 +9,7 @@ export const Home = () => {
     return <p>error loading users</p>
   }
 
-  const {users} = data
+  const { users } = data
 
   return (
     <section className="mx-auto mt-8 max-w-fit">

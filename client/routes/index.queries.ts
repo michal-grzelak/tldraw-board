@@ -1,6 +1,6 @@
-import {queryClient} from '@client/util/react-query'
-import {queryOptions, useQuery} from '@tanstack/react-query'
-export type UsersResponse = {users: string[]}
+import { queryClient } from '@client/util/react-query'
+import { queryOptions, useQuery } from '@tanstack/react-query'
+export type UsersResponse = { users: string[] }
 
 export const usersQueryOptions = () => {
   return queryOptions<UsersResponse>({

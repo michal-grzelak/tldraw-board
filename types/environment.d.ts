@@ -1,4 +1,4 @@
-import type {LoggerOptions} from 'pino'
+import type { LoggerOptions } from 'pino'
 
 declare global {
   namespace NodeJS {

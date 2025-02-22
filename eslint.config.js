@@ -41,7 +41,7 @@ export default tseslint.config(
   {
     rules: {
       'no-misleading-character-class': 'off',
-      'no-constant-condition': ['error', {checkLoops: false}],
+      'no-constant-condition': ['error', { checkLoops: false }],
       'import/no-unresolved': 'off',
       'import/order': [
         'error',
