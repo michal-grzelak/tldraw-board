@@ -2,8 +2,11 @@ import { fastify } from 'fastify'
 import fastifyWebsocket from '@fastify/websocket'
 import { reactRouterFastify } from '@mcansh/remix-fastify/react-router'
 import getPort, { portNumbers } from 'get-port'
+import sourceMapSupport from 'source-map-support'
 import { usersRouter } from './users'
 import type { LoggerOptions } from 'pino'
+
+sourceMapSupport.install()
 
 const { NODE_ENV = 'development' } = process.env
 const logLevel = process.env.LOG_LEVEL || 'warn'
