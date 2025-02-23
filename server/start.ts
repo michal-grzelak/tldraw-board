@@ -26,7 +26,13 @@ const app = fastify({
   logger: loggerOptions[NODE_ENV],
 })
 
-app.register(reactRouterFastify)
+app.register((instance, opts, done) =>
+  reactRouterFastify(
+    instance,
+    { ...opts, buildDirectory: 'build/react-router' },
+    done,
+  ),
+)
 app.register(usersRouter, { prefix: '/api' })
 
 const desiredPort = Number(process.env.PORT) || 3000

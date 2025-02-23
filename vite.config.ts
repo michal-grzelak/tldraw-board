@@ -4,11 +4,5 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [
-    reactRouter(),
-    tailwindcss(),
-    tsconfigPaths({
-      ignoreConfigErrors: true,
-    }),
-  ],
+  plugins: [reactRouter(), tailwindcss(), tsconfigPaths()],
 })

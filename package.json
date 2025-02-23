@@ -10,7 +10,7 @@
   "type": "module",
   "scripts": {
     "build": "NODE_ENV=production run-s 'build:react' 'build:server' 'build:ext'",
-    "build:ext": "ts-add-js-extension --dir build/fastify",
+    "build:ext": "ts-add-js-extension --dir build/server",
     "build:react": "react-router build",
     "build:server": "tsc --project tsconfig.server.json",
     "check": "run-p 'check:*'",
@@ -19,7 +19,7 @@
     "check:type": "run-s typegen 'build:server --noEmit' 'tsc --noEmit'",
     "dev": "tsx watch ./server/start",
     "format": "prettier --write .",
-    "start": "NODE_ENV=production node --env-file-if-exists=.env --env-file-if-exists=.env.production ./build/fastify/start.js",
+    "start": "NODE_ENV=production node --env-file-if-exists=.env --env-file-if-exists=.env.production ./build/server/start.js",
     "tsc": "tsc",
     "typegen": "react-router typegen",
     "prepare": "husky"

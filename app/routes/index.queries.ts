@@ -1,4 +1,4 @@
-import { queryClient } from '@client/util/react-query'
+import { queryClient } from '@util/react-query'
 import { queryOptions, useQuery } from '@tanstack/react-query'
 export interface UsersResponse {
   users: string[]
