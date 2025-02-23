@@ -1,19 +1,21 @@
+import { type MetaFunction } from 'react-router'
 import { Home } from '@components/Home'
-import { ensureUsersData } from './index.queries'
-
-import type { MetaFunction } from 'react-router'
+import { getHostname } from '@util/hostname'
+import type { Route } from './+types'
 
 export const meta: MetaFunction = () => {
   return [{ title: 'React Router + Fastify' }]
 }
 
-export const clientLoader = (): Promise<{ users: string[] }> =>
-  ensureUsersData()
+export const loader = async (): Promise<{ users: string[] }> => {
+  const res = await fetch(`${getHostname()}/api/users`)
+  return res.json()
+}
 
-export default function Index() {
+export default function Index({ loaderData }: Readonly<Route.ComponentProps>) {
   return (
     <main>
-      <Home />
+      <Home users={loaderData.users} />
     </main>
   )
 }

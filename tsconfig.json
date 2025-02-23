@@ -22,7 +22,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "types": ["@react-router/node", "vite/client"],
+    "types": ["@react-router/node", "vite/client", "./types/environment.d.ts"],
     "verbatimModuleSyntax": true,
     "paths": {
       "@routes/*": ["./app/routes/*"],

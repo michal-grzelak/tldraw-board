@@ -1,16 +1,7 @@
-import { useUsersQuery } from '@routes/index.queries'
-
-export const Home = () => {
-  const { data, isPending, isError } = useUsersQuery()
-  if (isPending) {
-    return <p>loading users</p>
-  }
-  if (isError) {
-    return <p>error loading users</p>
-  }
-
-  const { users } = data
-
+interface Props {
+  users: string[]
+}
+export const Home = ({ users }: Props) => {
   return (
     <section className="mx-auto mt-8 max-w-fit">
       <h1 className="text-3xl">React Router + Fastify</h1>

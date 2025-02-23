@@ -44,6 +44,8 @@ const address = await app.listen({
   port: portToUse,
   host,
 })
+// set adress for global usage
+globalThis.ADDRESS = address
 console.log(`✅ ${NODE_ENV} server started: ${address}`)
 
 if (portToUse !== desiredPort) {

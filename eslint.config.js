@@ -2,7 +2,6 @@
 
 import eslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
-import tanstackQuery from '@tanstack/eslint-plugin-query'
 import reactHooks from 'eslint-plugin-react-hooks'
 // @ts-expect-error - no types available
 import importPlugin from 'eslint-plugin-import'
@@ -30,8 +29,6 @@ export default tseslint.config(
   tseslint.configs.strict,
   tseslint.configs.stylistic,
 
-  tanstackQuery.configs['flat/recommended'],
-
   // TODO: this uses `canary` version for compatibility with flat config; update to >= 5.2.0 when released
   reactHooks.configs['recommended-latest'],
 
@@ -58,6 +55,7 @@ export default tseslint.config(
           ],
         },
       ],
+      curly: ['error'],
     },
   },
 )

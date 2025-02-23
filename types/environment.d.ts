@@ -9,4 +9,7 @@ declare global {
       LOG_LEVEL?: LoggerOptions['level']
     }
   }
+
+  // eslint-disable-next-line no-var
+  var ADDRESS: string
 }
