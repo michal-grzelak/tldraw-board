@@ -25,11 +25,11 @@
     "types": ["@react-router/node", "vite/client"],
     "verbatimModuleSyntax": true,
     "paths": {
-      "@client/*": ["./app/*"],
-      "@server/*": ["./server/*"],
       "@routes/*": ["./app/routes/*"],
       "@components/*": ["./app/components/*"],
       "@util/*": ["./app/util/*"],
+      "@client/*": ["./app/*"],
+      "@server/*": ["./server/*"],
       "@t/*": ["./types/*"]
     },
     "noEmit": true,
