@@ -1,4 +1,5 @@
 import { fastify } from 'fastify'
+import fastifyWebsocket from '@fastify/websocket'
 import { reactRouterFastify } from '@mcansh/remix-fastify/react-router'
 import getPort, { portNumbers } from 'get-port'
 import { usersRouter } from './users'
@@ -33,6 +34,7 @@ app.register((instance, opts, done) =>
     done,
   ),
 )
+app.register(fastifyWebsocket)
 app.register(usersRouter, { prefix: '/api' })
 
 const desiredPort = Number(process.env.PORT) || 3000

@@ -25,6 +25,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@fastify/websocket": "^11.0.2",
     "@mcansh/remix-fastify": "^4.0.6",
     "@react-router/node": "^7.2.0",
     "@react-router/serve": "^7.2.0",
