@@ -1,4 +1,5 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router'
+import React from 'react'
 import type { LinksFunction } from 'react-router'
 
 import './styles/app.css'

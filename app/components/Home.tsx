@@ -1,6 +1,7 @@
 interface Props {
   users: string[]
 }
+
 export const Home = ({ users }: Props) => {
   return (
     <section className="mx-auto mt-8 max-w-fit">
